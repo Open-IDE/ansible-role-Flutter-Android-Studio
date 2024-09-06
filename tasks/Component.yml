@@ -1,0 +1,25 @@
+---
+- name: install build-tools
+  ansible.builtin.shell: "{{ sdkmanager_bin }} --install 'build-tools;{{ build_tools_version }}'"
+  args:
+    creates: "{{ sdk_path }}/build-tools/{{ build_tools_version }}/source.properties"
+
+- name: install cmdline-tools
+  ansible.builtin.shell: "{{ sdkmanager_bin }} --install 'cmdline-tools;{{ cmdline_tools_version }}'"
+  args:
+    creates: "{{ sdk_path }}/cmdline-tools/{{ cmdline_tools_version }}/source.properties"
+
+- name: install platforms android
+  ansible.builtin.shell: "{{ sdkmanager_bin }} --install 'platforms;android-{{ platforms_android_version }}'"
+  args:
+    creates: "{{ sdk_path }}/platforms/android-35/source.properties"
+
+- name: install emulator
+  ansible.builtin.shell: "{{ sdkmanager_bin }} --install 'emulator'"
+  args:
+    creates: "{{ sdk_path }}/emulator/source.properties"
+
+- name: install Android Virtual Device
+  ansible.builtin.shell: "{{ sdkmanager_bin }} --install 'system-images;android-{{ virtual_device_version }};google_apis;{{ ansible_architecture }}'"
+  args:
+    creates: "{{ sdk_path }}/system-images/android-{{ virtual_device_version }}/google_apis/{{ ansible_architecture }}/source.properties"

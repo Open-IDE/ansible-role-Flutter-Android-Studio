@@ -1,0 +1,3 @@
+---
+- name: include component
+  include_tasks: Component.yml

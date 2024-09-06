@@ -1,0 +1,4 @@
+---
+# This is specific to Android Studio only! may not be on $PATH
+sdkmanager_bin: "/home/{{ ansible_env.USER }}/Android/Sdk/cmdline-tools/latest/bin/sdkmanager"
+sdk_path: "/home/{{ ansible_env.USER }}/Android/Sdk"

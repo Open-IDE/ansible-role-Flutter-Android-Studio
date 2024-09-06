@@ -1,0 +1,7 @@
+---
+build_tools_version: 35.0.0
+cmdline_tools_version: latest
+
+android_version: 35
+platforms_android_version: "{{ android_version }}"
+virtual_device_version: "{{ android_version }}"
